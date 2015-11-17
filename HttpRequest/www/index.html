@@ -1,0 +1,87 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="assets/css/http.css">
+	<link rel="stylesheet" href="assets/css/material.blue_grey-blue.min.css" />
+	<link rel="stylesheet" href="assets/css/material-icons.css" >
+	<link rel="stylesheet" href="assets/font/font-roboto.css" type="text/css">
+	<title>Http Test</title>
+</head>
+<body ng-app="myApp" ng-controller="HttpController">
+	<div class="div-global">
+		<div http-config></div>
+		<div class="div-content">
+			<div class="div-center">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				    <input class="mdl-textfield__input" name="user" type="text" id="input-user" ng-model="cmd.user" value="{{cmd.user}}">
+				    <label class="mdl-textfield__label" for="input-user">User</label>
+				    <div class="mdl-tooltip" for="input-user">User to get token</div>
+  				</div>
+  				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				    <input class="mdl-textfield__input" name="password" type="password" id="input-password" ng-model="cmd.password" value="{{cmd.password}}">
+				    <label class="mdl-textfield__label" for="input-password">Password</label>
+				    <div class="mdl-tooltip" for="input-password">User to get token</div>
+  				</div>
+			</div>
+			<div class="div-clear"></div>
+			<div class="div-center">
+				<button id="btn-token" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent margin-def" ng-click="getToken()">Get Token</button>
+
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent margin-def" ng-click="onGet()">GET</button>
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent margin-def" ng-click="onPost()">POST</button>
+			</div>
+			<div class="div-clear"></div>
+			<div class="div-center margin-def">
+				<span http-select options="paths" name="paths"></span>
+			</div>
+			<div class="div-clear"></div>
+			<div class="div-center">
+				<div class="middle left">
+					<h6>Json data</h6>
+					<textarea id="area-data" name="stringData" ng-model="cmd.stringData"></textarea>
+				</div>
+				<div class="middle rigth">
+					<h6>Data</h6>
+					<div class="mirror-code">
+						<div class="margin-def">
+							<code class="" bind-html-unsafe="cmd.humanData"></code>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h6>{{cmd.status}}</h6>
+			<span class="mdl-typography--font-light">{{cmd.status ? 'See the result above:' : ''}}</span>
+			<hr/>
+			<br/>
+			</hr>
+			<br/>
+			<div class="div-center" ng-show="cmd.status">
+				
+				<div class="middle half left">
+					<h6>Simplified Result</h6>
+					<input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" ng-model="view.opacityResult">
+					<div class="margin-def" style="opacity: {{view.opacityResult /100}}">
+						<code bind-html-unsafe="cmd.result"></code>
+					</div>
+				</div>
+				<div class="middle half rigth">
+					<h6>Original Result</h6>
+					<input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" ng-model="view.opacitySimple">
+					<div class="margin-def" style="opacity: {{view.opacitySimple / 100}}">
+						<code>{{cmd.simpleResult}}</code>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/angular.min.js"></script>
+	<script src="assets/js/json.human.js"></script>
+	<script src="assets/js/http.js"></script>
+	<script src="assets/js/material-mdl.min.js"></script>
+</body>
+</html>

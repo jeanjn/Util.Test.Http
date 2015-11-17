@@ -1,0 +1,56 @@
+textarea{
+	width: 100%;
+	min-width: 500px;
+	min-height: 200px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-global{
+	width: 100%;
+  	text-align: center;
+}
+
+.div-content{
+    display: inline-block;
+}
+
+.div-center{
+	display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-clear{
+	clear: both;
+}
+
+.margin-def{
+	margin: 10px;
+}
+
+.middle{
+	display: inline-block;
+}
+
+.half{
+	max-width: 48%;
+}
+
+.mirror-code{
+	width: 100%;
+	min-width: 500px;
+	min-height: 200px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}

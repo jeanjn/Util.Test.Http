@@ -1,0 +1,67 @@
+<div id="show-config" style="margin-top: 1%; margin-left: 1%;">
+	<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-config">
+		<input type="checkbox" id="switch-config" class="mdl-switch__input" ng-model="configVM.show" ng-true-value="true" ng-false-value="false">
+		<div class="mdl-tooltip" for="switch-config"></div>
+  </label>
+</div>
+<hr/>
+<div id="div-config" ng-show="configVM.show">
+	<div id="user-def">
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		    <input class="mdl-textfield__input" name="user" type="text" id="input-user" ng-model="cmd.user" value="{{cmd.user}}">
+		    <label class="mdl-textfield__label" for="input-user">User</label>
+	    	<div class="mdl-tooltip" for="input-user">User default to get token</div>
+		</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		    <input class="mdl-textfield__input" name="password" type="password" id="input-password" ng-model="cmd.password" value="{{cmd.password}}">
+		    <label class="mdl-textfield__label" for="input-password">Password</label>
+		    <div class="mdl-tooltip" for="input-password">User default to get token</div>
+		</div>
+	</div>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		    <input class="mdl-textfield__input" name="user" type="text" id="input-user" ng-model="configVM.newPath" value="{{configVM.newPath}}">
+		    <label class="mdl-textfield__label" for="input-user">New path</label>
+	    	<div class="mdl-tooltip" for="input-user">Controller/Action</div>
+	</div>
+	<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" ng-click="pushPath(configVM.newPath)">
+	  <i class="material-icons">add</i>
+	</button>
+	<hr/>
+	<div id="paths" class="div-center">
+		<table class="mdl-data-table mdl-js-data-table">
+		  <thead>
+		    <tr>
+		    	<th class="mdl-data-table__cell--non-numeric" id="th-path">
+		    		Paths
+		    		<div class="mdl-tooltip" for="th-path">Service path {Controller/Action}</div>
+		    	</th>
+		      	<th class="mdl-data-table__cell--non-numeric" id="th-remove">
+		      		Remove
+		      		<div class="mdl-tooltip" for="th-remove">Remove the path</div>
+		      	</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr ng-repeat="path in paths | reverse">
+		      <td class="mdl-data-table__cell--non-numeric">
+		      	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			      	<input class="mdl-textfield__input" name="user" type="text" id="input-user" value="{{path}}">
+			    </div>
+			    <td>
+			    	<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" ng-click="removePath(path)">
+				  		<i class="material-icons">delete</i>
+					</button>
+			    </td>
+		      </td>
+		    </tr>
+		  </tbody>
+		</table>
+		<hr/>
+		
+	</div>
+</div>
+<script>
+	$(function(){
+		componentHandler.upgradeAllRegistered();
+	});
+</script>
