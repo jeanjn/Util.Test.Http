@@ -66,34 +66,35 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <Content Include="www\assets\css\2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2" />
-    <Content Include="www\assets\js\angular.min.js.map" />
-    <Content Include="www\assets\js\material.min.js.map" />
+    <Content Include="assets\css\2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2" />
+    <Content Include="assets\js\angular.min.js.map" />
+    <Content Include="assets\js\material.min.js.map" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
-    <Content Include="www\assets\css\angular-material.min.css" />
-    <Content Include="www\assets\css\http.css" />
-    <Content Include="www\assets\css\material-icons.css" />
-    <Content Include="www\assets\css\material.blue_grey-blue.min.css" />
-    <Content Include="www\assets\font\font-roboto.css" />
-    <Content Include="www\assets\js\angular.min.js" />
-    <Content Include="www\assets\js\http.js" />
-    <Content Include="www\assets\js\jquery.js" />
-    <Content Include="www\assets\js\json.human.js" />
-    <Content Include="www\assets\js\material-mdl.min.js" />
-    <Content Include="www\assets\tpl\config.html" />
-    <Content Include="www\index.html" />
+    <Content Include="assets\css\angular-material.min.css" />
+    <Content Include="assets\css\http.css" />
+    <Content Include="assets\css\material-icons.css" />
+    <Content Include="assets\css\material.blue_grey-blue.min.css" />
+    <Content Include="assets\font\font-roboto.css" />
+    <Content Include="assets\js\angular.min.js" />
+    <Content Include="assets\js\http.js" />
+    <Content Include="assets\js\jquery.js" />
+    <Content Include="assets\js\json.human.js" />
+    <Content Include="assets\js\material-mdl.min.js" />
+    <Content Include="assets\tpl\config.html" />
+    <Content Include="index.html" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
